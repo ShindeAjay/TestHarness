@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/FrameworkAPI/Framework.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/bsh-2.0b6.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/poi-3.12.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/poi-ooxml-3.12.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/poi-ooxml-schemas-3.12.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/selenium-server-standalone-3.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/testng-6.14.3.jar"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/NAV_AUT/Navigator_Testharness/Package/Selenium Apis/log4j-1.2.14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
