@@ -61,6 +61,21 @@ public class NavigatorGeneralInfoPage extends SeleniumHelper {
 			waitForPageElementToLoad();
 		}		
 	}
+	
+	public void setEndorsmentDescriptionWithCancellationReason(DetailedReport test,String option){
+		try {
+			waitForTheElementToBeLoad(ApplicationCommonOR.CANCELLATION_REASON_CONTAINER,"Cancellation Reason");
+			selectDropDownValuesByEnteringText("Material Change In Risk",ApplicationCommonOR.CANCELLATION_REASON_CONTAINER, 
+					ApplicationCommonOR.SEARCH_BOX, ApplicationCommonOR.CANCELLATION_RESON_LIST, "Cancellation Reason",test);
+			waitForTheElementToBeLoad(ApplicationCommonOR.VALIDATE_PACKAGE,"Validate Package");		
+			waitForTheElementToBeLoad(ApplicationCommonOR.ENDORSMENT_DESC,"Endorsmenr Description");	
+			enterInputTextvalueByJavaScript(ApplicationCommonOR.ENDORSMENT_DESC, "Test", "Enter Endorsment Description: ",test);
+			waitForTheElementToBeLoad(ApplicationCommonOR.VALIDATE_PACKAGE,"Validate Package");		
+			clickOnButton(ApplicationCommonOR.VALIDATE_PACKAGE, test, "Validated button: ");
+		} catch (Exception e) {
+			System.out.println("Not able to Find Endorsment and Cancealltion Reason");
+		}
+	}
 
 	public void selectCancellationReason(DetailedReport test) throws Exception {
 		waitForTheElementToBeLoad(ApplicationCommonOR.CANCELLATION_REASON_CONTAINER,"Cancellation Reason");

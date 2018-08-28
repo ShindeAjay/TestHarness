@@ -684,4 +684,11 @@ public class SeleniumHelper extends TestCase {
 			} 
 		}					
 		
+		public void setStartDateEndDate(int day,String month,int year){
+			try {
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 }

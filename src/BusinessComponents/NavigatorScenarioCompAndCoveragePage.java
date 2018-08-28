@@ -237,8 +237,20 @@ public class NavigatorScenarioCompAndCoveragePage extends SeleniumHelper {
 				}
 				counter++;
 			}
+			setPrimaryLimitHazard();
 		} catch (Exception e) {
 			System.out.println("Primary Underlyer Not Found");
+		}
+	}
+
+	private void setPrimaryLimitHazard() {
+		try {
+			waitForTheElementToBeLoad(NavigatorComponentAndCoveragePageOR.PRIMARY_LIMIT_HAZARD, "Limit Hazard");
+			selectDropDownValuesByEnteringText("1.00", NavigatorComponentAndCoveragePageOR.PRIMARY_LIMIT_HAZARD,
+					ApplicationCommonOR.BROKER_INPUT_TXT, NavigatorComponentAndCoveragePageOR.PRIMARY_LIMIT_TYPE,
+					"Limit Hazard", _objDetailedReport);
+		} catch (Exception e) {
+			System.out.println("Limit Hazard DropdownNot found");
 		}
 	}
 
@@ -711,7 +723,7 @@ public class NavigatorScenarioCompAndCoveragePage extends SeleniumHelper {
 				waitForTheElementToBeLoad(ApplicationCommonOR.VALIDATE_PACKAGE, "Validate Package");
 				clickOnButton(ApplicationCommonOR.VALIDATE_PACKAGE, _objDetailedReport, "Validate Package");
 				break;
-			case "Bind":				
+			case "Bind":
 				setSubjectivityRecieved("Scenarios & Options");
 				waitForTheElementToBeLoad(NavigatorComponentAndCoveragePageOR.ACKNOWLEDGE_CHECKBOX_ERROR_TAB,
 						"Acknowleded CheckBox");
@@ -809,7 +821,7 @@ public class NavigatorScenarioCompAndCoveragePage extends SeleniumHelper {
 			waitForTheElementToBeLoad(ApplicationCommonOR.VALIDATE_PACKAGE, "Validate Package");
 			clickOnButton(ApplicationCommonOR.VALIDATE_PACKAGE, test, "Validate Package: ");
 			break;
-		case "External Endorsed":
+		case "External":
 			waitForPageElementToLoad();
 			clickOnLinkByText("Scenarios & Options", test, NavigatorComponentAndCoveragePageOR.SCENARIO_TAB);
 			packagePage.clickOnScenario(test);
@@ -845,7 +857,7 @@ public class NavigatorScenarioCompAndCoveragePage extends SeleniumHelper {
 				_testDataManage, null);
 		SubjectivityPage _page = new SubjectivityPage(_Browser, _objDetailedReport, _testDataManage, null);
 		waitForPageElementToLoad();
-		clickOnLinkByText(action, _objDetailedReport, NavigatorComponentAndCoveragePageOR.SCENARIO_TAB);		
+		clickOnLinkByText(action, _objDetailedReport, NavigatorComponentAndCoveragePageOR.SCENARIO_TAB);
 		packagePage.clickOnScenario(_objDetailedReport);
 		clickOnLinkByText("Subjectivities", _objDetailedReport, NavigatorComponentAndCoveragePageOR.SCENARIO_TAB);
 		_page.selectCheckBoxToRecievedSubjectives(_objDetailedReport);
@@ -922,6 +934,29 @@ public class NavigatorScenarioCompAndCoveragePage extends SeleniumHelper {
 				waitForTheElementToBeLoad(xpathEditSectionForPPL, "PPL Edit Section");
 				clickOnElement(xpathEditSectionForPPL);
 
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	private void setContractorPollutionLaibility() {
+		int counter = 0;
+		try {
+			List<WebElement> TABLE_TR_LIST = _Browser.findElements(ApplicationCommonOR.LIMITS_TBL_TR_LIST);
+			for (int i = TABLE_TR_LIST.size(); i >= TABLE_TR_LIST.size(); i--) {
+				String getActualLimitCoveragetr = String.format(ApplicationCommonOR.LIMITS_TR, i);
+				By xpathActualLimitcoveragetr = By.xpath(getActualLimitCoveragetr);
+				waitForTheElementToBeLoad(xpathActualLimitcoveragetr, "Coverage Table section");
+				if (!(counter == 2)) {
+					clickOnElement(xpathActualLimitcoveragetr);
+					waitForTheElementToBeLoad(ApplicationCommonOR.DELETE_BTN, "Delete Button");
+					clickOnElement(ApplicationCommonOR.DELETE_BTN);
+				} else {
+					break;
+				}
+				counter++;
 			}
 
 		} catch (Exception e) {

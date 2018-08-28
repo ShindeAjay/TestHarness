@@ -47,6 +47,9 @@ public class DocumentReviewPage extends SeleniumHelper {
 			case "BinderCancelled":
 				viewDocumentByStatus(passValueBy, test, counter);
 				break;
+			case "External":
+				viewDocumentByStatus(passValueBy, test, counter);
+				break;
 			default:
 				break;
 			}
@@ -56,10 +59,35 @@ public class DocumentReviewPage extends SeleniumHelper {
 		}
 
 	}
+	
+	private void setExternalOnDocumentReviewPage(String option){
+		By xpathdocumentViewer = null;
+		try {
+			xpathdocumentViewer = By.xpath(".//*[@class='tree-documents']/div/div[2]/i[@class='fa fa-circle-thin']/../a[contains(text(),'View')]");
+			List<WebElement> elm = _Browser.findElements(ApplicationCommonOR.VIEW_DOC_LIST);
+			waitForTheElementToBeLoad(ApplicationCommonOR.VIEW_DOC_LIST,"document List");				
+			for (int i = 0; i < elm.size(); i++) {
+				if ("External".equalsIgnoreCase(option)) {
+					waitForTheElementToBeLoad(ApplicationCommonOR.MAKECHANGES,"Make Changes");
+					waitForTheElementToBeLoad(ApplicationCommonOR.SEND_FOR_REVIEW,"Send Review");
+					clickOnButton(xpathdocumentViewer, _objDetailedReport, "View button Clicked: ");
+					handleParentWindow();
+				}else{						
+					clickOnButton(xpathdocumentViewer, _objDetailedReport, "View button Clicked: ");
+					handleParentWindow();
+				}					
+			}
+		} catch (Exception e) {
+		 System.out.println("External Endorsement .....");
+		}
+	}
 
 	public void viewDocumentByStatus(String option, DetailedReport test, int counter) throws Exception {
 		By xpathdocumentViewer = null;
-		if (!"Endorsement".equals(option)) {
+		if ("External".equals(option)) {
+			setExternalOnDocumentReviewPage(option);
+		}
+		if (!"Endorsement".equals(option) && !"External".equals(option)){
 			xpathdocumentViewer = By.xpath(".//*[@class='tree-documents']/div/div[2]/i[@class='fa fa-circle-thin']/../a[contains(text(),'View')]");
 			waitForTheElementToBeLoad(xpathdocumentViewer,"View Link");			
 			try {
@@ -105,8 +133,7 @@ public class DocumentReviewPage extends SeleniumHelper {
 				waitForTheElementToBeLoad(ApplicationCommonOR.REVIEWER_CONTAINER,"Review Container");
 				selectDropDownValuesByEnteringText("Crotty, Patrick", ApplicationCommonOR.REVIEWER_CONTAINER, ApplicationCommonOR.REVIEWER_TEXTBOX, ApplicationCommonOR.REVIEWER_LIST, "Reviewer Name :",test);
 				clickOnButton(ApplicationCommonOR.SEND_FOR_REVIEW, test, "Review: ");
-			}
-			
+			}			
 		}						
 	}
 

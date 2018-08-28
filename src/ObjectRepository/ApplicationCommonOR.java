@@ -137,6 +137,12 @@ public class ApplicationCommonOR {
 	public final static By POLLUTION_LEGAL_LIABILITY_TR=By.xpath(".//*[@id='pollutionlegalliabilityParent']//*[@class='ui-jqgrid-bdiv']//tr");
 	public final static String POLL_LEGAL_LIABILITY_EACH_ROW = ".//*[@id='pollutionlegalliabilityParent']//*[@class='ui-jqgrid-bdiv']//tr[%d]";
 	public final static String POLL_LEGAL_LIAB_EACH_TBL_DATA = "/td[%d]";
+	/** Coverage: Contractor Pollution Liability**/
+	public final static By LIMITS_TBL_TR_LIST = By.xpath(".//*[@data-grid-caption='Limits & Deductibles']//*[@class='ui-jqgrid-bdiv']//tr");
+	public final static String LIMITS_TR = ".//*[@data-grid-caption='Limits & Deductibles']//*[@class='ui-jqgrid-bdiv']//tr[%d]";
+	public final static By DELETE_BTN = By.xpath(".//*[@id='del_btn']/div");
+	public final static By EXPOSURE = By.xpath(".//li/a[contains(text(),'Exposures')]");
+	
 
 	
 

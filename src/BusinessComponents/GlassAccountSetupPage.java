@@ -208,17 +208,17 @@ public class GlassAccountSetupPage extends SeleniumHelper {
 
 		switch (action) {
 		case "cleared":
-			clickOnElement(GlassAccountSetupPageOR.CLEAREDCHCKBX);
+			clickOnElement(GlassAccountSetupPageOR.CLEAREDCHCKBX,action);
 			break;
 		case "Hold":
-			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_HOLD_CHCKBX);
-			waitForTheElementToBeLoad(GlassAccountSetupPageOR.SUBMISSION_HOLD_CONTAINER, "Submission Hold Container");
+			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_HOLD_CHCKBX,"Hold");
+			waitForTheElementToBeLoad(GlassAccountSetupPageOR.SUBMISSION_HOLD_CONTAINER,action);
 			selectDropDownValuesByEnteringText("BOR", GlassAccountSetupPageOR.SUBMISSION_HOLD_CONTAINER,
 					GlassAccountSetupPageOR.COMMON_DROPDOWN_TXTBOX, GlassAccountSetupPageOR.HOLD_REASON_LIST,
 					"Missing Info: ", _objDetailedReport);
 			break;
 		case "Decline with Letter":
-			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_LETTER_DECLINE_CHKBOX);
+			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_LETTER_DECLINE_CHKBOX,action);			
 			waitForTheElementToBeLoad(GlassAccountSetupPageOR.SUBMISSION_WITH_LETTER_CONTAINER,
 					"Submission Letter Container");
 			selectDropDownValuesByEnteringText("Pricing", GlassAccountSetupPageOR.SUBMISSION_WITH_LETTER_CONTAINER,
@@ -226,7 +226,7 @@ public class GlassAccountSetupPage extends SeleniumHelper {
 					"Decline with Letter: ", _objDetailedReport);
 			break;
 		case "Decline no Letter":
-			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_DECLINE_NO_LETTER_CHKBOX);
+			clickOnElement(GlassAccountSetupPageOR.SUBMISSION_DECLINE_NO_LETTER_CHKBOX,action);
 			waitForTheElementToBeLoad(GlassAccountSetupPageOR.SUBMISSION_DECLINE_NO_LETTER_CONTAINER,
 					"Submission Decline");
 			selectDropDownValuesByEnteringText("Pricing",

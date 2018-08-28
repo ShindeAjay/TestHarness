@@ -207,7 +207,7 @@ public class NavigatorEXCRegression extends SeleniumHelper {
 	}
 	
 	/*
-	 * 
+	 * Policy 
 	 */
 	
 	public void testPIP_to_PPR() throws Exception{
@@ -228,4 +228,71 @@ public class NavigatorEXCRegression extends SeleniumHelper {
 		_bIssued.setBindIssuedForEXC(_testDataManage.getData("Insured Name"), _issuedFlag);		
 		_pIssued.setPolicyIssuedForEXC(_testDataManage.getData("Insured Name"));
 	}
+	
+	public void testPI_To_PReIssue() throws Exception{
+		NavigatorPolicyIssued _pIssued = new NavigatorPolicyIssued(_Browser, _objDetailedReport,_testDataManage,null);
+		_pIssued.setPolicyIssuedForEXC(_testDataManage.getData("Insured Name"));
+		_pIssued.setPolicyIssuedToPolicyReIssue(_testDataManage.getData("Insured Name"), _issuedFlag);		
+	}
+	
+	public void testPIP_To_DIP() throws Exception{
+		NavigatorPolicyIssued _pIssued = new NavigatorPolicyIssued(_Browser, _objDetailedReport,_testDataManage,null);
+		_pIssued.setPolicyInProgressToDeleteInProgress(_testDataManage.getData("Insured Name"));
+	}
+	
+	/*
+	 * Endorsement
+	 */
+
+	public void testEEIP_To_DIP() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsmentToDeleteInProgress(_testDataManage.getData("Insured Name"), "External","Delete In Progress");		
+	}
+	
+	public void testEEIP_To_EPR() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _pendingReviewFlag);
+	}
+	
+	public void testEEIP_To_EP() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _issuedFlag);
+	}
+	
+	public void testEEPR_To_Revise() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _pendingReviewFlag);
+		_NEndo.setEndorsmentPendingReviewToRevise(_testDataManage.getData("Insured Name"), "Revise", "EEPR");
+	}
+	
+	public void testEEPR_To_PE() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _pendingReviewFlag);
+		_NEndo.setEndorsementPendingReviewToPolicyEndorsed(_testDataManage.getData("Insured Name"),"EEPR");
+	}
+	
+	public void testPE_To_EEIP() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _issuedFlag);
+		_NEndo.setEndorsmentToExternalEndorsementInProgress(_testDataManage.getData("Insured Name"),"EP","External");
+	}
+	
+	public void testPE_To_PC() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _issuedFlag);
+		/**** Need to Update the code ***/
+	}
+	
+	public void testPE_To_VE() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _issuedFlag);
+		/**** Need to Update the code ***/
+	}
+	
+	public void testPE_To_Renewal() throws Exception{
+		NavigatorEndorsementPage _NEndo = new NavigatorEndorsementPage(_Browser, _objDetailedReport, _testDataManage, null);
+		_NEndo.setEndorsementToPolicyEndorsed(_testDataManage.getData("Insured Name"), "External", _issuedFlag);
+		/**** Need to Update the code ***/
+	}
 }
+

@@ -126,6 +126,8 @@ public class NavigatorComponentAndCoveragePageOR {
 	public static final String PRIMARY_RETENTION_AMOUNT = ".//*[@id='%d_RetentionAmount']";
 	public static final String PRIMARY_ACTUAL_PREMIUM = ".//*[@id='%d_ActualPremium']";
 	public static final String PRIMARY_LIMIT_TYPE = ".//*[@data-grid-caption='Primary Underlyers']//*[@class='ui-jqgrid-bdiv']//tr[%d]/td[2]";
+	public static final By PRIMARY_LIMIT_HAZARD = By.xpath(".//*[@id='select2-questionid6293-container']");
+	public static final String PRIMARY_LIMIT_HAZARD_LIST = (".//*[@id='select2-questionid6293-results']/li[contains(text(),'%s')]");
 	/*******************Excess Rating******************/
 	public static final By EXCESS_RATING_PRICE_FLOOR_AUTO = By.xpath(".//*[@data-grid-caption='Price Floor 1x1P']//*[@class='ui-jqgrid-bdiv']//tr[2]/td[6]");
 	public static final By EXCESS_RATING_PRICE_FLOOR_GL = By.xpath((".//*[@data-grid-caption='Price Floor 1x1P']//*[@class='ui-jqgrid-bdiv']//tr[3]/td[6]"));
